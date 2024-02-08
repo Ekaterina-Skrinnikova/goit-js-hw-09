@@ -33,7 +33,7 @@ img {
   gap: 24px;
   max-width: 1128px;
 
-  outline: 2px solid tomato;
+  /* outline: 2px solid tomato; */
 }
 
 .gallery-image {
