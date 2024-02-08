@@ -65,6 +65,7 @@ const images = [
 ];
 
 const galleryContainer = document.querySelector('.gallery');
+console.log(galleryContainer);
 galleryContainer.innerHTML = createGallery(images);
 
 function createGallery(images) {
