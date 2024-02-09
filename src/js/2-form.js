@@ -28,6 +28,13 @@ if (localData) {
 
 form.addEventListener('submit', event => {
   event.preventDefault();
-  localStorage.clear();
-  form.reset();
+  if (form.email.value !== '' && form.message.value !== '') {
+    console.log(`email: ${form.email.value}
+message: ${form.message.value}`);
+
+    localStorage.clear();
+    form.reset();
+  } else {
+    alert('Please fill in all fields');
+  }
 });

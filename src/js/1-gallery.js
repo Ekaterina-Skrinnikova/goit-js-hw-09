@@ -81,7 +81,7 @@ function createGallery(images) {
             src="${preview}"
             data-source="${original}"
             alt="${description}"
-            title="${description}"
+          "
           />
         </a>
       </li>`
@@ -89,4 +89,7 @@ function createGallery(images) {
     .join('');
 }
 
-const lightbox = new SimpleLightbox('.gallery a', createGallery(images));
+const lightbox = new SimpleLightbox('.gallery a', {
+  captionsData: 'alt',
+  captionDelay: 250,
+});
