@@ -66,9 +66,12 @@ const images = [
 
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
+const lightbox = new SimpleLightbox('.gallery a', {
+  captionsData: 'alt',
+  captionDelay: 250,
+});
 
 const galleryContainer = document.querySelector('.gallery');
-galleryContainer.innerHTML = createGallery(images);
 
 function createGallery(images) {
   return images
@@ -79,7 +82,6 @@ function createGallery(images) {
           <img
             class="gallery-image"
             src="${preview}"
-            data-source="${original}"
             alt="${description}"
           "
           />
@@ -89,7 +91,4 @@ function createGallery(images) {
     .join('');
 }
 
-const lightbox = new SimpleLightbox('.gallery a', {
-  captionsData: 'alt',
-  captionDelay: 250,
-});
+galleryContainer.innerHTML = createGallery(images);

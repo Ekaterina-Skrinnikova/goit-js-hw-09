@@ -1,5 +1,4 @@
 const form = document.querySelector('.feedback-form');
-// console.log(form);
 const keyStorage = 'feedback-form-state';
 
 function dataForm(form) {
@@ -29,10 +28,9 @@ if (localData) {
 form.addEventListener('submit', event => {
   event.preventDefault();
   if (form.email.value !== '' && form.message.value !== '') {
-    console.log(`email: ${form.email.value}
-message: ${form.message.value}`);
+    console.log({ email: form.email.value, message: form.message.value });
 
-    localStorage.clear();
+    localStorage.removeItem(keyStorage);
     form.reset();
   } else {
     alert('Please fill in all fields');
